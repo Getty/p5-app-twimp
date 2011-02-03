@@ -14,7 +14,16 @@ sub index :Chained('base') :PathPart('') :Args(0) {
 	if ($feed_url) {
 		$feed_url =~ s!feed://!http://!g;
 		$c->stash->{feed_url} = $feed_url;
-		$c->stash->{feed} = $c->model('Feed')->feed($c->stash->{feed_url});
+		$c->stash->{feed} = $c->model('Feed')->feed($feed_url);
+	}
+}
+
+sub content :Chained('base') :Args(0) {
+    my ( $self, $c ) = @_;
+	my $entry_url = $c->req->param('entry_url');
+	if ($entry_url) {
+		$c->stash->{entry_url} = $entry_url;
+		$c->stash->{entry_content} = $c->model('Feed')->entry_content($entry_url);
 	}
 }
 

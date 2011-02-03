@@ -20,6 +20,7 @@ requires 'YAML';
 requires 'Template::Provider::Encoding' => '0.10';
 requires 'Catalyst::View::TT' => '0.35';
 requires 'Catalyst::Plugin::Unicode::Encoding';
+requires 'HTML::ExtractContent';
 requires 'XML::Feed';
 requires 'LWP';
 

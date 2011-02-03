@@ -1,0 +1,13 @@
+<form action="<@ c.uri_for('content') @>" method="GET">
+	<div>
+		Give Entry URL:
+		<input type="text" size="50" name="entry_url" value="<@ entry_url @>" />
+		<input type="submit" value="Fetch Content" />
+		<@ IF entry_url @>
+			<hr/>
+			<b>Try to extract content from <a href="<@ entry_url @>"><@ entry_url @></a></b>
+			<hr/>
+			<@ entry_content @>
+		<@ END @>
+	</div>
+</form>

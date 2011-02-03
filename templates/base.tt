@@ -7,8 +7,9 @@
 		<div id="content" class="mainbox">
 			<@ content @>
 		</div>
-		<div id="footer" class="mainbox">
-			<img src="<@ c.uri_for( '/static/images/btn_120x50_powered_shadow.png' ) @>" />
+		<div id="footer" class="mainbox" style="text-align:right">
+			Developed by <a href="http://www.raudssus.de/">Raudssus Social Software</a>
+			<a href="http://www.catalystframework.org/"><img border="0" src="<@ c.uri_for( '/static/images/catalyst_powered.png' ) @>" /></a>
 		</div>
 	</body>
 </html>

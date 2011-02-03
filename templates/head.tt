@@ -2,5 +2,6 @@
 	<title>App::Twimp <@ version @></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<script type="text/javascript" src="/static/js/jquery.js"></script>
+	<script type="text/javascript" src="/static/js/twimp.js"></script>
 	<link rel="stylesheet" type="text/css" href="/static/css/twimp.css" />
 </head>

@@ -7,6 +7,7 @@ extends 'Catalyst::Model';
 use HTTP::Request;
 use XML::Feed;
 use LWP::UserAgent;
+use HTML::ExtractContent;
 
 has _agent => (
 	is => 'rw',
@@ -17,6 +18,30 @@ has _agent => (
 		return $ua;
 	},
 );
+
+sub entry_content {
+	my ( $self, $url ) = @_;
+	my $req = HTTP::Request->new(GET => $url);
+	my $res = $self->_agent->request($req);
+	
+	my $content;
+
+	if ($res->is_success) {
+		$content = $res->content;
+		eval {
+			my $extractor = HTML::ExtractContent->new;
+			$extractor->extract($res->content);
+			$content = $extractor->as_text;
+		};
+		if ($@) {
+			$content = 'HTML ExtractContent eval error: '.$@;			
+		}
+	} else {
+		$content = 'HTTP Request error: '.$res->status_line;
+	}
+	
+	return $content;
+}
 
 sub feed {
 	my ( $self, $url ) = @_;

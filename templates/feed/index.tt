@@ -8,12 +8,15 @@
 			<@ IF feed.error @>
 				<div class="error"><@ feed.error @></div>
 			<@ ELSE @>
-				<table>
-					<@ FOREACH entry IN feed.entries @>
-						<tr><td><a href="<@ entry.url @>"><@ entry.url @></a></td></tr>
-						<tr><td><@ entry.title @></td></tr>
-					<@ END @>
-				</table>
+				<@ FOREACH entry IN feed.entries @>
+					<div><a href="<@ entry.url @>"><@ entry.url @></a></div>
+					<div><@ entry.title @></div>
+					<div>
+						<@ USE url(c.uri_for('/feed/content'), entry_url=entry.url) @>
+						<a href="<@ url @>">Test extracting from content</a>
+					</div>
+					<hr/>
+				<@ END @>
 			<@ END @>
 		<@ END @>
 	</div>

@@ -4,5 +4,6 @@
 </ul>
 <div>Utilities</div>
 <ul>
-	<li><a href="<@ c.uri_for('/feed') @>">Feed Tester</a></li>
+	<li><a href="<@ c.uri_for('/feed') @>">Feed Test</a></li>
+	<li><a href="<@ c.uri_for('/feed/content') @>">Content Test</a></li>
 </ul>
