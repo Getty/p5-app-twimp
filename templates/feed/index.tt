@@ -10,8 +10,8 @@
 			<@ ELSE @>
 				<table>
 					<@ FOREACH entry IN feed.entries @>
-						<tr><td><@ entry.url @></td></tr>
-						<tr><td><a href="<@ entry.url @>"><@ entry.title @></a></td></tr>
+						<tr><td><a href="<@ entry.url @>"><@ entry.url @></a></td></tr>
+						<tr><td><@ entry.title @></td></tr>
 					<@ END @>
 				</table>
 			<@ END @>
