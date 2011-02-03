@@ -1,0 +1,20 @@
+<form action="<@ c.uri_for @>" method="GET">
+	<div>
+		Give Feed URL:
+		<input type="text" size="50" name="feed_url" value="<@ feed_url @>" />
+		<input type="submit" value="Test Feed" />
+		<@ IF feed @>
+			<hr/>
+			<@ IF feed.error @>
+				<div class="error"><@ feed.error @></div>
+			<@ ELSE @>
+				<table>
+					<@ FOREACH entry IN feed.entries @>
+						<tr><td><@ entry.url @></td></tr>
+						<tr><td><a href="<@ entry.url @>"><@ entry.title @></a></td></tr>
+					<@ END @>
+				</table>
+			<@ END @>
+		<@ END @>
+	</div>
+</form>

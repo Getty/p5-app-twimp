@@ -1,0 +1,8 @@
+<div>Your Twitches</div>
+<ul>
+	<li>TODO</li>
+</ul>
+<div>Utilities</div>
+<ul>
+	<li><a href="<@ c.uri_for('/feed') @>">Feed Tester</a></li>
+</ul>

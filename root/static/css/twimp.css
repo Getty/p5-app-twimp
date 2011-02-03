@@ -1,0 +1,21 @@
+div#header {
+	font-size: 20px;
+}
+
+div#content {}
+
+div#footer {}
+
+div.mainbox {
+	margin: 5px;
+	padding: 5px;
+	border: 2px solid blue;
+	background: white;
+}
+
+body {
+	background: lightblue;
+	font-family: "Trebuchet MS",Verdana,Arial,Helvetica,sans-serif;
+	font-size: 16px;
+}
+
